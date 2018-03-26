@@ -49,8 +49,14 @@ gulp.task('tinypng', function() { // сжатие картинок
 // Сборка проекта
 
 gulp.task('css', function() {
-  gulp.src('css/*.css')
-  .pipe(gulp.dest('build/css'));
+  gulp.src('sass/style.scss')
+  .pipe(plumber())
+  .pipe(sass())
+  .pipe(autoprefixer({ browsers: ['last 4 versions'] }))
+  .pipe(gulp.dest('build/css'))
+  .pipe(minify())
+  .pipe(rename('style.min.css'))
+  .pipe(gulp.dest('build/css'))
 })
 
 gulp.task('html', function() {
@@ -70,7 +76,7 @@ gulp.task('fonts', function() {
 
 gulp.task('js', function() {
   gulp.src('js/main.js')
-  .pipe(gulp.dest('build'));
+  .pipe(gulp.dest('build/js'));
 })
 
 gulp.task('clean', function() {
