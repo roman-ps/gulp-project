@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     minify = require('gulp-csso'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    tinypng = require('gulp-tinypng'), // плагин от tinypng.com
+    imagemin = require('gulp-imagemin'),
     del = require('del'),
     runsequence = require('run-sequence'); // плагин для последовательного выполнения задач 
     
@@ -40,12 +40,6 @@ gulp.task('webserver', function(){  // запуск live-сервера
   });
 });
 
-gulp.task('tinypng', function() { // сжатие картинок
-  gulp.src('img/*')
-  .pipe(tinypng('OqvQ0pn0iAaJbR8QeJbvbVf5t41GplS'))
-  .pipe(gulp.dest('img'));
-});
-
 // Сборка проекта
 
 gulp.task('css', function() {
@@ -66,6 +60,7 @@ gulp.task('html', function() {
 
 gulp.task('img', function() {
   gulp.src('img/*')
+  .pipe(imagemin())
   .pipe(gulp.dest('build/img'));
 })
 
