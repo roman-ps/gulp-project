@@ -18,14 +18,14 @@
   "homepage": "https://github.com/roman-ps/gulp-project#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "browser-sync": "^2.18.13",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-csso": "^3.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-imagemin": "^4.0.0",
-    "del": "^3.0.0",
+    "gulp-sass": "^4.0.2",
+    "browser-sync": "^2.26.7",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "del": "^5.1.0",
     "run-sequence": "^2.2.0"
   }
 }
