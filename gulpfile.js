@@ -34,7 +34,7 @@ gulp.task('styles', function() { // стили, префиксер, минифи
 gulp.task('webserver', function(){  // запуск live-сервера
   server.init({
     server: {
-      baseDir: './'
+      baseDir: 'source/'
     },
     notify: false
   });
